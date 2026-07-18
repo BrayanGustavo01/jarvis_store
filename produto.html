@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto | Jarvis Store</title>
+    
+    <!-- CSS principal corrigido para caminho relativo explícito -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Biblioteca de Ícones (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========================================= -->
+    <!--                   NAVBAR                  -->
+    <!-- ========================================= -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- LOGO AJUSTADA: CAMINHO CORRIGIDO -->
+            <a href="./index.html" class="logo-link" style="display: flex; align-items: center; text-decoration: none; width: 140px; height: 50px; justify-content: center; overflow: visible; margin-left: 35px;">
+                <img src="./assets/logo/logo-jarvis.png" alt="Jarvis Store Logo" style="height: 135px; width: auto; object-fit: contain; transform: scale(1.6); pointer-events: none;">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="./index.html#categorias">Categorias</a></li>
+                <li><a href="./index.html#produtos">Produtos</a></li>
+                <li><a href="./index.html#sobre">Sobre</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <button class="btn-cart" id="cart-btn" aria-label="Carrinho">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <a href="./index.html" class="btn-login" style="text-decoration: none;"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========================================= -->
+    <!--          PÁGINA DE DETALHE DO PRODUTO     -->
+    <!-- ========================================= -->
+    <main class="product-detail-page">
+        <div class="breadcrumb">
+            <span id="product-category">Home / Carregando...</span>
+        </div>
+
+        <section class="product-detail-container">
+            <!-- Lado Esquerdo: Imagem -->
+            <div class="product-detail-left">
+                <div class="image-gallery-wrapper">
+                    <img id="main-product-img" src="" alt="Carregando Produto..." onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
+                </div>
+            </div>
+
+            <!-- Lado Direito: Informações e Compra -->
+            <div class="product-detail-right">
+                <h1 id="product-title">Carregando Nome do Produto...</h1>
+                
+                <div class="product-meta-row">
+                    <div class="rating" id="product-rating">
+                        <!-- Gerado via Javascript -->
+                    </div>
+                </div>
+
+                <div class="price-container">
+                    <span class="price-value" id="product-price">R$ 0,00</span>
+                </div>
+
+                <p class="product-description" id="product-description">
+                    Carregando a descrição detalhada do produto...
+                </p>
+
+                <div class="selection-section">
+                    <h3>Escolha a Cor:</h3>
+                    <div class="colors" id="product-colors">
+                        <!-- Gerado via Javascript -->
+                    </div>
+                </div>
+
+                <div class="purchase-actions">
+                    <div class="quantity-selector">
+                        <label for="product-qty">Qtd:</label>
+                        <input type="number" id="product-qty" value="1" min="1" max="10">
+                    </div>
+                    <button class="btn-buy" id="add-to-cart-btn" style="width: 100%;">
+                        <i class="fa-solid fa-cart-shopping"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="product-guarantees">
+                    <div class="guarantee-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>Envio para todo o Brasil via Correios / Transportadora.</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Impressão em PLA Premium, biodegradável e resistente.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast-notification" class="toast">Produto adicionado!</div>
+
+    <footer id="contato">
+        <div class="copyright">&copy; 2026 Jarvis Store • Todos os direitos reservados.</div>
+    </footer>
+
+    <!-- Scripts com caminhos relativos explícitos -->
+    <script src="./js/product-detail.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
