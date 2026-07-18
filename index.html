@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis Store | Printing the Future</title>
+    <meta name="description" content="Loja especializada em produtos personalizados feitos com Impressão 3D.">
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Biblioteca de Ícones (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========================================= -->
+    <!--                   NAVBAR                  -->
+    <!-- ========================================= -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- LOGO AJUSTADA: TAMANHO EQUILIBRADO E ALINHADA COM O CONTEÚDO DE BAIXO -->
+            <a href="index.html" class="logo-link" style="display: flex; align-items: center; text-decoration: none; width: 140px; height: 50px; justify-content: center; overflow: visible; margin-left: 35px;">
+            <img src="./assets/logo/logo-jarvis.png" alt="Jarvis Store Logo" style="height: 135px; width: auto; object-fit: contain; transform: scale(1.6); pointer-events: none;">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#categorias">Categorias</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <button class="btn-cart" id="cart-btn" aria-label="Carrinho">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="btn-login" id="open-login-btn"><i class="fa-regular fa-user"></i> Entrar</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ========================================= -->
+        <!--                    HERO                   -->
+        <!-- ========================================= -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-left">
+                    <span class="hero-tag">PRINTING THE FUTURE</span>
+                    <h1>Transformando ideias em realidade.</h1>
+                    <p>
+                        Desenvolvemos produtos exclusivos utilizando Impressão 3D de alta qualidade 
+                        para setups, escritórios e apaixonados por tecnologia.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#produtos" class="btn-primary">Explorar Produtos <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#sobre" class="btn-secondary">Conheça a Jarvis</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h2>10+</h2>
+                            <span>Produtos Autorais</span>
+                        </div>
+                        <div class="stat">
+                            <h2>350+</h2>
+                            <span>Clientes</span>
+                        </div>
+                        <div class="stat">
+                            <h2>5★</h2>
+                            <span>Avaliações</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="circle-bg"></div>
+                    <img src="assets/images/hero.png" alt="Produto em Destaque" onerror="this.src='https://images.unsplash.com/photo-1615840287214-7fe58a8b668f?auto=format&fit=crop&w=600&q=80'">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!--                CATEGORIAS                 -->
+        <!-- ========================================= -->
+        <section class="categories" id="categorias">
+            <div class="section-title">
+                <span>CATEGORIAS</span>
+                <h2>Encontre o produto ideal</h2>
+                <p>Selecione uma categoria para filtrar os produtos em tempo real.</p>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card active" data-filter="all">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-border-all"></i>
+                    </div>
+                    <h3>Todos</h3>
+                    <p>Ver catálogo completo.</p>
+                </div>
+
+                <div class="category-card" data-filter="gamer">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3>Setup & Gamer</h3>
+                    <p>Docks, suportes e iluminação temática.</p>
+                </div>
+
+                <div class="category-card" data-filter="decoracao">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3>Decoração</h3>
+                    <p>Vasos inteligentes e peças de design.</p>
+                </div>
+
+                <div class="category-card" data-filter="utilidades">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3>Utilidades</h3>
+                    <p>Organizadores, valet trays e suportes práticos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!--           PRODUTOS EM DESTAQUE            -->
+        <!-- ========================================= -->
+        <section class="products" id="produtos">
+            <div class="section-title">
+                <span>NOSSO CATÁLOGO</span>
+                <h2>Produtos Exclusivos em 3D</h2>
+                <p>Peças premium projetadas com precisão milimétrica.</p>
+            </div>
+
+            <div class="product-grid" id="product-list">
+                
+                <!-- 1. Organizador de Cabos -->
+                <div class="product-card" data-category="utilidades">
+                    <div class="product-badge">Mais Vendido</div>
+                    <a href="produto.html?id=1">
+                        <img src="assets/images/produto16.png" alt="Organizador de Cabos" onerror="this.src='https://images.unsplash.com/photo-1551645121-d1034da75057?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=1" style="text-decoration: none;">
+                        <h3>Organizador de Cabos</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Preto" style="background-color: #1a1a1a;" title="Preto"></button>
+                            <button class="color-dot" data-color="Cinza" style="background-color: #555555;" title="Cinza"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 19,90</p>
+                    <button class="btn-buy" data-id="1" data-name="Organizador de Cabos" data-price="19.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 2. Dock para Headset + Controle -->
+                <div class="product-card" data-category="gamer">
+                    <div class="product-badge">Premium</div>
+                    <a href="produto.html?id=2">
+                        <img src="assets/images/produto15.png" alt="Dock para Headset + Controle" onerror="this.src='https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=2" style="text-decoration: none;">
+                        <h3>Dock Headset + Controle</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Preto" style="background-color: #1a1a1a;" title="Preto"></button>
+                            <button class="color-dot" data-color="Branco" style="background-color: #f5f5f5; border: 1px solid #ccc;" title="Branco"></button>
+                            <button class="color-dot" data-color="Vermelho" style="background-color: #ff3b30;" title="Vermelho"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 79,90</p>
+                    <button class="btn-buy" data-id="2" data-name="Dock Headset + Controle" data-price="79.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 3. Suporte para Notebook -->
+                <div class="product-card" data-category="utilidades">
+                    <a href="produto.html?id=3">
+                        <img src="assets/images/produto14.png" alt="Suporte para Notebook" onerror="this.src='https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=3" style="text-decoration: none;">
+                        <h3>Suporte para Notebook</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Preto" style="background-color: #1a1a1a;" title="Preto"></button>
+                            <button class="color-dot" data-color="Cinza" style="background-color: #555555;" title="Cinza"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 49,90</p>
+                    <button class="btn-buy" data-id="3" data-name="Suporte para Notebook" data-price="49.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 4. Nome em LED -->
+                <div class="product-card" data-category="gamer">
+                    <div class="product-badge">Personalizado</div>
+                    <a href="produto.html?id=4">
+                        <img src="assets/images/produto13.png" alt="Nome em LED" onerror="this.src='https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=4" style="text-decoration: none;">
+                        <h3>Nome em LED Personalizado</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="RGB" style="background: linear-gradient(45deg, red, orange, yellow, green, blue, purple);" title="RGB"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 99,90</p>
+                    <button class="btn-buy" data-id="4" data-name="Nome em LED Personalizado" data-price="99.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 5. Vaso Autoirrigável -->
+                <div class="product-card" data-category="decoracao">
+                    <a href="produto.html?id=5">
+                        <img src="assets/images/produto12.png" alt="Vaso Autoirrigável" onerror="this.src='https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=5" style="text-decoration: none;">
+                        <h3>Vaso Autoirrigável</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Branco" style="background-color: #f5f5f5; border: 1px solid #ccc;" title="Branco"></button>
+                            <button class="color-dot" data-color="Mármore" style="background: linear-gradient(135deg, #e0e0e0, #bebebe);" title="Mármore"></button>
+                            <button class="color-dot" data-color="Preto" style="background-color: #1a1a1a;" title="Preto"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 39,90</p>
+                    <button class="btn-buy" data-id="5" data-name="Vaso Autoirrigável" data-price="39.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 6. Valet Tray -->
+                <div class="product-card" data-category="utilidades">
+                    <a href="produto.html?id=6">
+                        <img src="assets/images/produto7.png" alt="Valet Tray Organizer" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=6" style="text-decoration: none;">
+                        <h3>Valet Tray Organizador</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Preto" style="background-color: #1a1a1a;" title="Preto"></button>
+                            <button class="color-dot" data-color="Marrom Café" style="background-color: #5c4033;" title="Marrom Café"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 54,90</p>
+                    <button class="btn-buy" data-id="6" data-name="Valet Tray Organizador" data-price="54.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 7. Suporte para Tablet -->
+                <div class="product-card" data-category="utilidades">
+                    <a href="produto.html?id=7">
+                        <img src="assets/images/produto8.png" alt="Suporte para Tablet" onerror="this.src='https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=7" style="text-decoration: none;">
+                        <h3>Suporte Premium para Tablet</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Preto" style="background-color: #1a1a1a;" title="Preto"></button>
+                            <button class="color-dot" data-color="Cinza" style="background-color: #555555;" title="Cinza"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 34,90</p>
+                    <button class="btn-buy" data-id="7" data-name="Suporte Premium para Tablet" data-price="34.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 8. Organizador de Mesa Modular -->
+                <div class="product-card" data-category="utilidades">
+                    <div class="product-badge">Exclusivo</div>
+                    <a href="produto.html?id=8">
+                        <img src="assets/images/produto9.png" alt="Organizador Modular" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=8" style="text-decoration: none;">
+                        <h3>Organizador Modular</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Preto/Laranja" style="background: linear-gradient(135deg, #1a1a1a 50%, #ff6600 50%);" title="Preto/Laranja"></button>
+                            <button class="color-dot" data-color="Branco/Cinza" style="background: linear-gradient(135deg, #f5f5f5 50%, #555555 50%);" title="Branco/Cinza"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 69,90</p>
+                    <button class="btn-buy" data-id="8" data-name="Organizador Modular" data-price="69.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 9. Chaveiros Personalizados -->
+                <div class="product-card" data-category="decoracao">
+                    <a href="produto.html?id=9">
+                        <img src="assets/images/produto10.png" alt="Chaveiros Personalizados" onerror="this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=9" style="text-decoration: none;">
+                        <h3>Chaveiros Customizados</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Dourado" style="background-color: #ffd700;" title="Dourado"></button>
+                            <button class="color-dot" data-color="Prata" style="background-color: #c0c0c0;" title="Prata"></button>
+                            <button class="color-dot" data-color="Preto" style="background-color: #1a1a1a;" title="Preto"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 14,90</p>
+                    <button class="btn-buy" data-id="9" data-name="Chaveiros Customizados" data-price="14.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 10. Suporte Temático Alexa Robot -->
+                <div class="product-card" data-category="decoracao">
+                    <div class="product-badge">Sucesso de Vendas</div>
+                    <a href="produto.html?id=10">
+                        <img src="assets/images/produto11.png" alt="Suporte Temático Alexa Robot" onerror="this.src='https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=10" style="text-decoration: none;">
+                        <h3>Suporte Temático Alexa Robot</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Preto" style="background-color: #1a1a1a;" title="Preto"></button>
+                            <button class="color-dot" data-color="Branco" style="background-color: #f5f5f5; border: 1px solid #ccc;" title="Branco"></button>
+                            <button class="color-dot" data-color="Cinza" style="background-color: #555555;" title="Cinza"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 49,90</p>
+                    <button class="btn-buy" data-id="10" data-name="Suporte Temático Alexa Robot" data-price="49.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 11. Luminária Cyberpunk LED Ciano -->
+                <div class="product-card" data-category="gamer">
+                    <div class="product-badge">Novidade</div>
+                    <a href="produto.html?id=11">
+                        <img src="assets/images/produto17.png" alt="Luminária Cyberpunk LED Ciano" onerror="this.src='https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=11" style="text-decoration: none;">
+                        <h3>Luminária Cyberpunk LED Ciano</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Ciano Neon" style="background-color: #00f0ff;" title="Ciano Neon"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 119,90</p>
+                    <button class="btn-buy" data-id="11" data-name="Luminária Cyberpunk LED Ciano" data-price="119.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+                <!-- 12. Suporte Articulado Gamer Duplo -->
+                <div class="product-card" data-category="gamer">
+                    <div class="product-badge">Premium</div>
+                    <a href="produto.html?id=12">
+                        <img src="assets/images/produto18.png" alt="Suporte Articulado Gamer Duplo" onerror="this.src='https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?auto=format&fit=crop&w=500&q=80'">
+                    </a>
+                    <a href="produto.html?id=12" style="text-decoration: none;">
+                        <h3>Suporte Articulado Gamer Duplo</h3>
+                    </a>
+                    <div class="color-selector">
+                        <span>Cor:</span>
+                        <div class="colors">
+                            <button class="color-dot active" data-color="Cinza/Laranja" style="background: linear-gradient(135deg, #555555 50%, #ff6600 50%);" title="Cinza/Laranja"></button>
+                            <button class="color-dot" data-color="Total Preto" style="background-color: #1a1a1a;" title="Total Preto"></button>
+                        </div>
+                    </div>
+                    <p class="price">R$ 89,90</p>
+                    <button class="btn-buy" data-id="12" data-name="Suporte Articulado Gamer Duplo" data-price="89.90">
+                        <i class="fa-solid fa-cart-shopping"></i> Comprar
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!--                   SOBRE                   -->
+        <!-- ========================================= -->
+        <section class="about" id="sobre">
+            <div class="about-content">
+                <div class="about-text">
+                    <span>QUEM SOMOS</span>
+                    <h2>Transformando ideias em realidade, camada por camada.</h2>
+                    <p>
+                        Na <strong>Jarvis Store</strong>, acreditamos que a criatividade não tem limites. Utilizamos a tecnologia da Impressão 3D para desenvolver produtos exclusivos, funcionais e personalizados, unindo inovação, qualidade e design em cada projeto.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/about.png" alt="Impressão 3D" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================= -->
+    <!--          MODAIS E NOTIFICAÇÕES            -->
+    <!-- ========================================= -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-login-btn">&times;</button>
+            <h2>Identifique-se ou Entre</h2>
+            <form class="modal-form">
+                <div class="input-group">
+                    <label for="login-name"><i class="fa-regular fa-user"></i> Nome de Usuário</label>
+                    <input type="text" id="login-name" placeholder="Como quer ser chamado?" required>
+                </div>
+                <div class="input-group">
+                    <label for="email"><i class="fa-regular fa-envelope"></i> E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fa-solid fa-lock"></i> Senha</label>
+                    <input type="password" id="password" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="btn-primary-block">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-cart-btn">&times;</button>
+            <h2>Seu Carrinho</h2>
+            <div class="cart-items" id="cart-items-container">
+                <p class="empty-cart">Seu carrinho está vazio.</p>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">R$ 0,00</span>
+            </div>
+            
+            <div class="cart-observations" style="margin: 15px 0; text-align: left;">
+                <label for="cart-notes" style="display: block; font-size: 0.85rem; color: #aaa; margin-bottom: 5px; font-weight: 500;">
+                    <i class="fa-regular fa-comment-dots"></i> Observações do Pedido:
+                </label>
+                <textarea id="cart-notes" rows="2" placeholder="Ex: Informações de entrega, pontos de referência ou detalhes do produto..." style="width: 100%; background: #0a0a0a; border: 1px solid #262626; border-radius: 6px; color: #fff; padding: 10px; resize: none; font-family: inherit; font-size: 0.9rem; outline: none; box-sizing: border-box;"></textarea>
+            </div>
+
+            <button id="checkout-btn" class="btn-primary-block">Finalizar via WhatsApp</button>
+        </div>
+    </div>
+
+    <div id="toast-notification" class="toast">Produto adicionado ao carrinho!</div>
+
+    <!-- ========================================= -->
+    <!--                   FOOTER                  -->
+    <!-- ========================================= -->
+    <footer id="contato">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-logo" style="margin-bottom: 25px; height: 60px; display: flex; align-items: center; justify-content: center; overflow: visible;">
+                    <img src="./assets/logo/logo-jarvis.png" alt="Jarvis Store Logo" style="height: 160px; width: auto; object-fit: contain; transform: scale(1.6); pointer-events: none;">
+                </div>
+                <p>Printing the Future.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/_guuh_01_" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/5511985143257" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2026 Jarvis Store • Todos os direitos reservados.</div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
